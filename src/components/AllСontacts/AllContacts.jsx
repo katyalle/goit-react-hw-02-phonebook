@@ -2,7 +2,6 @@ import { Component } from "react";
 import { nanoid } from "nanoid";
 import MyNumbers from '../MyNumbers/MyNumbers';
 import Contacts from '../Contacts/Contacts';
-import Filter from "components/Filter/Fillter";
 import styles from "./All-contacts.module.css"
 
 
@@ -16,7 +15,8 @@ state = {
     {id:nanoid(), name: 'Annie Copeland', number: '227-91-26'},
   ],
   name: '',
-  number: ''
+    number: '',
+  filter: ''
     }
     addContact = (data) => {
         const { name, number } = data;
@@ -50,18 +50,34 @@ state = {
 const {contacts} = this.state;
 this.setState({ contacts: contacts.filter(item => item.id !== id)})
     }
-    
+    changeFilter = ({ target }) => {
+        this.setState({
+            filter: target.value
+        })
+    }
+    getfilteredContacts() {
+        const { filter, contacts } = this.state;
+
+        const normalizedFilter = filter.toLowerCase();
+        
+        const filteredContacts = contacts.filter(({name, number}) => {
+            const normalizedName = name.toLowerCase();
+            const normalizedNumber = number.toLowerCase();
+            return (normalizedName.includes(normalizedFilter) || normalizedNumber.includes(normalizedFilter))
+        }) 
+        return filteredContacts;
+    }
 
 render() {
-    const { contacts } = this.state;
-    const { addContact,  deleteContact  } = this;
+    
+    const { addContact, deleteContact, changeFilter } = this;
+    const contacts = this.getfilteredContacts()
         return (
             <div>
                 <h1>Phonebook</h1>
                 <MyNumbers onSubmit={addContact} />
-                <Filter />
                 <h2>Contacts</h2>
-                <input name="filter" placeholder="search" />
+               <input onChange={changeFilter} name="filter" placeholder="Search" />
                 <Contacts items={contacts}  deleteContact={ deleteContact } />
               
         </div>

@@ -27,8 +27,6 @@ class Phonebook extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.onSubmit({ ...this.state });
-        // this.reset;
-    
     }
 
     reset() {

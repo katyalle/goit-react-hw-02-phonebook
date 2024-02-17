@@ -46,10 +46,10 @@ state = {
 })
     }
     
-  deleteContact = id => {
-    const { contacts } = this.state;
-    this.setState({ contacts: contacts.filter((item => item.id !== id)) });
-  };
+    deleteContact = id => {
+const {contacts} = this.state;
+this.setState({ contacts: contacts.filter(item => item.id !== id)})
+    }
     
 
 render() {
@@ -61,6 +61,7 @@ render() {
                 <MyNumbers onSubmit={addContact} />
                 <Filter />
                 <h2>Contacts</h2>
+                <input name="filter" placeholder="search" />
                 <Contacts items={contacts}  deleteContact={ deleteContact } />
               
         </div>

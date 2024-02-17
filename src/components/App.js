@@ -1,12 +1,17 @@
 import MyNumbers from './MyNumbers/MyNumbers';
 import Contacts from './Contacts/Contacts';
-import AllContacts from './AllContacts/AllContacts';
+import AllContacts from '../components/AllСontacts/AllContacts';
+import Filter from "components/Filter/Fillter";
+
+
 function App() {
     return (
        
 		
-        <div className="v">
-            <AllContacts/>
+        <div>
+            
+            <AllContacts />
+            
         </div>
     )
 }

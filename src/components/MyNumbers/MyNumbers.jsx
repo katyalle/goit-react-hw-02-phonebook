@@ -1,7 +1,8 @@
 import { Component } from "react";
 import { nanoid } from 'nanoid'
-import  App  from 'components/App';
 import styles from "./My-numbers.module.css";
+
+
 
 
 const INITIAL_STATE = {
@@ -25,8 +26,13 @@ class Phonebook extends Component {
     
     handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(this.state);
-        this.setState({...INITIAL_STATE})
+        this.props.onSubmit({ ...this.state });
+        // this.reset;
+    
+    }
+
+    reset() {
+            this.setState({...INITIAL_STATE})
     }
 
     render() {

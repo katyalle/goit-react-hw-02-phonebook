@@ -46,15 +46,11 @@ state = {
 })
     }
     
-    deleteContact = (id) => {
-        this.setState(({ contacts }) => {
-            const newContacts = contacts.filter(item = item.id !== id);
-
-            return {
-                contacts: newContactcs,
-            }
-    })
-}
+    deleteContact = id => {
+const {contacts} = this.state;
+this.setState({ contacts: contacts.filter(item = item.id !== id)})
+    }
+    
 
 render() {
     const { contacts } = this.state;

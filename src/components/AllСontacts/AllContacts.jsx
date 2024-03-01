@@ -2,7 +2,7 @@ import { Component } from "react";
 import { nanoid } from "nanoid";
 import MyNumbers from '../MyNumbers/MyNumbers';
 import Contacts from '../Contacts/Contacts';
-import styles from "./All-contacts.module.css"
+
 
 
 

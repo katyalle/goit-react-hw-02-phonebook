@@ -1,4 +1,4 @@
-import styles from "./Contacts.module.css";
+// import styles from "./Contacts.module.css";
 
 
 const Contacts = ({ items,  deleteContact}) => {

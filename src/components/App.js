@@ -1,5 +1,5 @@
-import MyNumbers from './MyNumbers/MyNumbers';
-import Contacts from './Contacts/Contacts';
+// import MyNumbers from './MyNumbers/MyNumbers';
+// import Contacts from './Contacts/Contacts';
 import AllContacts from '../components/AllСontacts/AllContacts';
 
 
